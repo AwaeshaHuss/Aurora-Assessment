@@ -1,0 +1,9 @@
+.dart_tool/
+.idea/
+.vscode/
+build/
+.packages
+pubspec.lock
+android/.gradle
+ios/Pods/
+flutter_app.iml
