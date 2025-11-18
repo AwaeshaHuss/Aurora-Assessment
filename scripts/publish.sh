@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Usage: ./scripts/publish.sh git@github.com:USERNAME/REPO.git
-# Initializes git (if needed), commits all files, sets remote and pushes to main.
+# Initializes git (if needed), commits all files, sets remote and pushes to development.
 
 if [ "$#" -ne 1 ]; then
   echo "Usage: $0 <git-remote-ssh-or-https-url>"
@@ -20,9 +20,9 @@ fi
 
 git add .
 git commit -m "Initial commit: palette image app" || echo "No changes to commit"
-git branch -M main || true
+git branch -M development || true
 git remote remove origin 2>/dev/null || true
 git remote add origin "$REMOTE_URL"
-git push -u origin main
+git push -u origin development
 
 echo "Pushed to $REMOTE_URL"
